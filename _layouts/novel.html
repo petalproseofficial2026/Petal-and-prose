@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} | Petal & Prose</title>
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+
+<header>
+<h1>Petal & Prose</h1>
+<p>Where Every Story Blooms</p>
+</header>
+
+<main class="novel-page">
+<h1>{{ page.title }}</h1>
+<p>{{ page.description }}</p>
+
+{% if page.cover %}
+<img src="{{ page.cover | relative_url }}" alt="{{ page.title }} cover">
+{% endif %}
+
+<article>
+{{ content }}
+</article>
+
+<a href="{{ '/' | relative_url }}">Back to Universe of Novels</a>
+</main>
+
+<footer>
+<p>© 2026 Petal & Prose. All Rights Reserved.</p>
+</footer>
+
+</body>
+  </html>
