@@ -1,5 +1,5 @@
 ---
-title: Milgari
-description: "Story of six friends, college life , unforgettable memories and friendship "
----
 layout: novel
+title: Milgari
+description: "Story of six friends, college life, unforgettable memories and friendship"
+---
