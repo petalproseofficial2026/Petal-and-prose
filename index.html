@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,18 +32,21 @@
 <h2>Universe of Novels</h2>
 <p>Discover stories that touch your heart.</p>
 
-<div class="novel">
-<h3>ملگری</h3>
-<p>A beautiful story of friendship, memories and college life.</p>
-<p class="status">COMING SOON</p>
-  <a href="milgari.html">Explore Story</a>
-</div>
+
 </section>
 <section id="coming-soon">
 <h2>Coming Soon</h2>
 <p>New stories are on their way. Stay tuned!</p>
 </section>
-
+{% assign novel_pages = site.pages | where_exp: "item", "item.path contains 'novels/'" %}
+{% for novel in novel_pages %}
+<div class="novel">
+  <h3>{{ novel.title }}</h3>
+  <p>{{ novel.description }}</p>
+  <p class="status">COMING SOON</p>
+  <a href="{{ novel.url | relative_url }}">Explore Story</a>
+</div>
+{% endfor %}
 <section id="about">
 <h2>About Petal & Prose</h2>
 <p>Petal & Prose is a home for readers and writers, where every story has a place to bloom.</p>
