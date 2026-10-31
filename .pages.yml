@@ -26,3 +26,12 @@ content:
       - name: body
         label: Complete Story
         type: rich-text
+              - name: status
+        label: Publication Status
+        type: select
+        options:
+          - label: Draft
+            value: draft
+          - label: Published
+            value: published
+        default: draft
