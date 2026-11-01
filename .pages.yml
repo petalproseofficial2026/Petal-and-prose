@@ -34,8 +34,12 @@ content:
         label: Publication Status
         type: select
         options:
-          - Draft
-          - Published
+          values:
+            - Draft
+            - Published
+            
+      
+          
 
       - name: body
         label: Complete Story
