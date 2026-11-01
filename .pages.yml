@@ -1,3 +1,4 @@
+
 media: media
 
 content:
@@ -7,8 +8,14 @@ content:
     path: novels
     format: yaml-frontmatter
     filename: "{primary}.md"
+
     view:
       primary: title
+      fields:
+        - title
+        - description
+        - status
+
     fields:
       - name: title
         label: Novel Title
@@ -23,15 +30,14 @@ content:
         label: Book Cover
         type: image
 
-      - name: body
-        label: Complete Story
-        type: rich-text
-              - name: status
+      - name: status
         label: Publication Status
         type: select
         options:
-          - label: Draft
-            value: draft
-          - label: Published
-            value: published
-        default: draft
+          - Draft
+          - Published
+
+      - name: body
+        label: Complete Story
+        type: rich-text
+        
