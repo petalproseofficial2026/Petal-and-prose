@@ -1,0 +1,20 @@
+
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>{{ site.github.url }}{{ site.baseurl }}/</loc>
+  </url>
+
+  {% for novel in site.pages %}
+    {% if novel.path contains 'novels/' and novel.status == 'Published' %}
+      <url>
+        <loc>{{ site.github.url }}{{ site.baseurl }}{{ novel.url }}</loc>
+      </url>
+    {% endif %}
+  {% endfor %}
+
+</urlset>
