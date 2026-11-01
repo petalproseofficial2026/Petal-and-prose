@@ -5,14 +5,12 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>{{ site.github.url }}{{ site.baseurl }}/</loc>
-  </url>
-
+    <loc>{{ site.github.url }}/Petal-and-prose/</loc>
+  
   {% for novel in site.pages %}
     {% if novel.path contains 'novels/' and novel.status == 'Published' %}
       <url>
-        <loc>{{ site.github.url }}{{ site.baseurl }}{{ novel.url }}</loc>
-      </url>
+        <loc>{{ site.github.url }}/Petal-and-prose{{ novel.url }}</loc>
     {% endif %}
   {% endfor %}
 
