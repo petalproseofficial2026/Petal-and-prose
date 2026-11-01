@@ -38,15 +38,20 @@
 <h2>Coming Soon</h2>
 <p>New stories are on their way. Stay tuned!</p>
 </section>
-{% assign novel_pages = site.pages | where_exp: "item", "item.path contains 'novels/'" %}
+
+{% assign novel_pages = site.pages | where_exp: "item", "item.path contains 'novels/'" | where: "status", "Published" %}
 {% for novel in novel_pages %}
 <div class="novel">
+  {% if novel.cover %}
+  <img src="{{ novel.cover | relative_url }}" alt="{{ novel.title }} Book Cover">
+  {% endif %}
   <h3>{{ novel.title }}</h3>
   <p>{{ novel.description }}</p>
-  <p class="status">COMING SOON</p>
-  <a href="{{ novel.url | relative_url }}">Explore Story</a>
+  <p class="status">PUBLISHED</p>
+  <a href="{{ novel.url | relative_url }}">Read Novel</a>
 </div>
 {% endfor %}
+  
 <section id="about">
 <h2>About Petal & Prose</h2>
 <p>Petal & Prose is a home for readers and writers, where every story has a place to bloom.</p>
